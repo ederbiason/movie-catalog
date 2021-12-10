@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Droid Sans", sans-serif;
+  text-align: center;
+  color: black;
+  background-image: url("https://cdn.wallpapersafari.com/69/33/1CUAth.jpg");
+  background-color: #ffffff;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.page-logo {
+  width: 140px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.alura-logo {
+  width: 40px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  padding-right: 0;
+}
+
+.page-title {
+  color: #ff6a6a;
+  margin: 20px 0 5px;
+  margin-left: 30%;
+  text-shadow: 2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff, -2px 0 #ffffff,
+    2px 2px #ffffff, -2px 2px #ffffff, 2px -2px #ffffff, -2px -2px #ffffff;
+}
+
+.page-subtitle {
+  margin-top: 5px;
+  margin-left: 30%;
+}
+
+p {
+  font-size: 17px;
+}
+
+.col-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span{
+  color: black;
+  background-color: #FCFCFA;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+strong{
+  margin-left: 45px;
+}
+
+.col-filmes p {
+  font-size: 14px;
+}
+
+.col-filmes img {
+  margin: 2.5px 5px;
+  height: 250px;
+  transition: 0.2s;
+}
+
+.col-filmes img:hover {
+  transform: scale(1.04);
+  box-shadow: 2px 2px 4px #0e1d2f;
+}
+
+.filmeNovo {
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
+
+.filmeNovo p{
+  padding: 5px;
+  background-color: #FCFCFA;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+.filme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.legenda {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  max-width: 160px;
+  padding: 3px 10px 20px;
+}
+
+input {
+  width: 250px;
+  margin: 4px;
+  padding: 6px;
+  border-radius: 5px;
+  border: 2px solid #e5e5e5;
+  vertical-align: middle;
+}
+
+#decresc,
+#cresc,
+#titulo {
+  width: 20px;
+  margin: 0;
+}
+
+.orden {
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: 2px solid #e5e5e5;
+  max-width: 350px;
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+label{
+  vertical-align: middle;
+}
+
+select {
+  width: 250px;
+  margin: 12px 4px 4px;
+  padding: 6px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 2px solid #e5e5e5;
+}
+
+button {
+  border: 0;
+  color: #000000;
+  background: #FCFCFA;
+  font-weight: bold;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #b0b0b0;
+}
+
+/* Posicionamento */
+.col-menu {
+  /* float: left; */
+  width: 30%;
+  position: fixed;
+  top: 20vh;
+  left: 25px;
+}
+
+.col-filmes {
+  float: left;
+  width: 69%;
+  margin-top: 10px;
+  margin-left: 30%;
+}
+
+.col-filmes label{
+  padding: 5px;
+  background-color: #FCFCFA;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+/* Limpa os floats depois das colunas */
+.menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Coloca os campos do menu em colunas uma ao lado da outra */
+@media screen and (max-width: 960px) {
+  .col-menu {
+    width: 100%;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .menu {
+    float: left;
+    width: 45%;
+    padding: 5px 10px 5px;
+  }
+
+  .col-filmes {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .page-title,
+  .page-subtitle {
+    margin-left: 0;
+  }
+
+  select {
+    margin-top: 5px;
+  }
+
+  .orden {
+    margin-top: 20px;
+  }
+}
+
+/* Layout responsivo -> faz as colunas se empilharem em vez de ficar lado a lado quando a tela fica menor que certo tamanho (max-width) */
+@media screen and (max-width: 620px) {
+  .container {
+    padding-left: 0;
+  }
+
+  .col-menu {
+    flex-direction: column;
+  }
+
+  .menu {
+    width: 95%;
+  }
+
+  .orden {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>AluraFlix</title>
+</head>
+
+<body>
+    <!-- Importações -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet'> <!-- Fonte Droid Sans -->
+    <script src="https://kit.fontawesome.com/8a0e7481c9.js" crossorigin="anonymous"></script> <!-- Icones -->
+
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo"
+        alt="">
+    <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+
+    <div class="container">
+
+        <div class="cabecalho">
+            <h1 class="page-title">AluraFlix</h1>
+
+            <p class="page-subtitle"><strong>Adicione o seu filme preferido!</strong></p>
+        </div> <!-- fecha <div class="cabecalho"> -->
+
+        <div class="col-menu">
+
+            <div class="menu">
+                <!-- Campos para adição de novos filmes -->
+                <span style="font-size: 0.9rem;"> Coloque o título e a URL do pôster do filme nos campos
+                    abaixo:</span><br>
+                <input placeholder="Título do Filme" type="text" id="filme" />
+                <input placeholder="Ano do Filme" type="number" id="ano" />
+                <input placeholder="URL do pôster do filme" type="text" id="poster" />
+                <button type="submit" onclick="Adicionar()">Adicionar</button>
+            </div> <!-- fecha <div class="menu"> (1) -->
+
+            <div class="menu">
+                <!-- Selecionar critérios de ordenação -->
+                <div class="orden">
+                    <strong>Ordenação</strong> <br>
+                    <input type="radio" id="titulo" name="orden" value="titulo" onclick='Ordenar()'>
+                    <label for="titulo">Título &nbsp<i class="fas fa-caret-up"></i></label>
+                    <br>
+                    <input type="radio" id="cresc" name="orden" value="cresc" onclick='Ordenar()'>
+                    <label for="cresc">Ano de lançamento &nbsp<i class="fas fa-caret-up"></i></label>
+                    <br>
+                    <input type="radio" id="decresc" name="orden" value="decresc" onclick='Ordenar()' checked>
+                    <label for="decresc">Ano de lançamento &nbsp<i class="fas fa-caret-down"></i></label>
+                </div> <!-- fecha <div class="orden"> -->
+                <br>
+
+                <!-- Select-menu para deletar filmes -->
+                <select id="deletar">
+                    <!-- Aqui vão entrar as opções para seleção através do Javascript -->
+                    <!--  <option selected disabled value="">Selecione um filme para deletar</option>
+				  <option value="0">Filme1</option>
+				  <option value="1">Filme2</option>
+				  <option value="2">Filme3</option> -->
+                </select>
+
+                <button type="submit" onclick="Deletar()">Deletar</button>
+            </div> <!-- fecha <div class="menu"> (2) -->
+
+        </div> <!-- fecha <div class="col-menu"> -->
+
+        <div class="col-filmes">
+            <div class="filmeNovo" id="filmeNovo"><p>Lista de filmes aqui</p></div>
+
+            <p><label for="filme">Fim do catálogo, adicione mais filmes para expandi-lo!</label></p>
+        </div> <!-- fecha <div class="col-filmes"> -->
+
+    </div> <!-- fecha <div class="container"> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
